@@ -1,4 +1,14 @@
-$color-contacto: #0096cd;
+$colores:(
+     contacto: #0096cd,
+     historia: #b8ac04e0,
+);
+
+@mixin flex_center{
+  display: flex;
+  justify-content: center;
+}
+
+
 
 *{
   padding: 0;
@@ -9,27 +19,21 @@ body{
   background-image: linear-gradient(to right, #000000, #312736, #395375, #0089a5, #00bfac);
 }
 
-.grid-container-galeria{
-  display: grid; 
-  grid-template-columns: 1fr 1fr 1fr; 
-  grid-template-rows:0.1fr 2fr 0.1fr; 
-  gap: 0px 0px; 
-  grid-template-areas: 
-    "header header header"
-    "main main main"
-    "footer footer footer";
-}
 
 .grid-container {
 display: grid; 
 grid-template-columns: 1fr 1fr 1fr; 
-grid-template-rows: 0.2fr 1fr 0.2fr; 
+grid-template-rows: 0.2fr 2fr 0.2fr; 
 gap: 0px 0px; 
 grid-template-areas: 
   "header header header"
   "main main main"
   "footer footer footer";
 
+}
+
+.grid-container-galeria{
+  @extend .grid-container;
 }
 
 /* HEADER */
@@ -74,12 +78,10 @@ grid-area: footer;
 display: flex;
 justify-content: space-between;
 align-items: center;
-grid-area: footer;
 
       section{
-          display: flex;
+          @include flex_center;
           flex-direction: column;
-          justify-content: center;
           align-items:center;
           width: 20%;
                      } 
@@ -130,6 +132,26 @@ margin: 0 5px;
 
 
 
+/* ACERCA DE NOSOTROS */
+
+.main-nosotros{
+  @include flex_center;
+      .main-nosotros h3{
+        color: map-get($colores, historia);
+        text-align: center;
+      }
+          .main-nosotros .button1{
+            position: absolute;
+            top: 200px;
+          }
+  }
+  
+  .w-100{
+  height: 300px;
+  }
+
+
+
 /* GALERIA */
 .galeria{
   margin: 40px 0;
@@ -165,7 +187,7 @@ height: 40px;
 border-radius: 5px;  
 border-style: solid; 
 border-width: 1px; 
-border-color: $color-contacto; 
+border-color: map-get($colores, contacto); 
 margin-top: 10px;  
 padding-left: 10px;
 margin-bottom: 20px; 
@@ -179,7 +201,7 @@ height: 150px;
 border-radius: 5px;  
 border-style: solid; 
 border-width: 1px; 
-border-color: $color-contacto; 
+border-color: map-get($colores, contacto); 
 margin-top: 10px;  
 padding-left: 10px;
 margin-bottom: 20px; 
@@ -193,8 +215,8 @@ padding-right: 5px;
 margin-bottom: 20px; 
 margin-top: 10px;   
 text-transform: uppercase;
-background-color: $color-contacto;  
-border-color: $color-contacto; 
+background-color: map-get($colores, contacto);   
+border-color: map-get($colores, contacto); 
 border-style: solid; 
 border-radius: 10px;  
 width: 420px;   
@@ -209,7 +231,7 @@ h1{
 font-size: 39px;  
 text-align: letf; 
 padding-bottom: 20px; 
-color: $color-contacto;
+color: map-get($colores, contacto); 
 }
 
 
@@ -254,8 +276,7 @@ border: 1px solid #97d848;
 /* GALERIA */
 .galeria{
 margin: 40px 0;
-display: flex;
-justify-content: center;
+@include flex_center;
     div img{
       width: 350px;
     }
@@ -270,28 +291,25 @@ grid-area: main;
 display: flex;
 flex-direction: column;
     h1{
-      display: flex;
-      justify-content: center;
+      @include flex_center;
       align-items: center;
       font-size: 35px;
-      color: #b8ac04e0;
+      color: map-get($colores, historia);
       margin: 100px 0;
     }
         h2{
           margin: 100px 0;
-          display: flex;
-          justify-content: center;
+          @include flex_center;
           align-items: center;
           font-size: 35px;
-          color: #b8ac04e0;
+          color: map-get($colores, historia);
         }
 }
 
 
 
 .historia div{
-display: flex;
-justify-content: center;
+  @include flex_center;
 align-items: center;
 margin: 50px 0;
   img{
@@ -320,8 +338,7 @@ margin: 0 30px;
 }
 
 .historia-div2{
-display: flex;
-justify-content: center;
+  @include flex_center;
 align-items: center;
 }
 
@@ -333,25 +350,6 @@ text-align: center;
 margin: 0 30px;
 }
 
-
-/* ACERCA DE NOSOTROS */
-
-.main-nosotros{
-display:flex;
-justify-content: center;
-    .main-nosotros h3{
-      color: #b8ac04e0;
-      text-align: center;
-    }
-        .main-nosotros .button1{
-          position: absolute;
-          top: 200px;
-        }
-}
-
-.w-100{
-height: 300px;
-}
 
 
 
