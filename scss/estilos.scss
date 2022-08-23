@@ -66,7 +66,7 @@ header{
 .main{
   display: flex;
   justify-content: center;
-      .p{
+      p{
               color:#fff;
               }
 }
@@ -338,7 +338,7 @@ margin: 0 30px;
 }
 
 .historia-div2{
-  @include flex_center;
+@include flex_center;
 align-items: center;
 }
 
