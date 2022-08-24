@@ -136,11 +136,11 @@ margin: 0 5px;
 
 .main-nosotros{
   @include flex_center;
-      .main-nosotros h3{
+      h3{
         color: map-get($colores, historia);
         text-align: center;
       }
-          .main-nosotros .button1{
+          .button1{
             position: absolute;
             top: 200px;
           }

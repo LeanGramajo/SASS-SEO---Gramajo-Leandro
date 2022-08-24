@@ -82,10 +82,10 @@ header {
 .main-nosotros {
   display: flex;
   justify-content: center; }
-  .main-nosotros .main-nosotros h3 {
+  .main-nosotros h3 {
     color: #b8ac04e0;
     text-align: center; }
-  .main-nosotros .main-nosotros .button1 {
+  .main-nosotros .button1 {
     position: absolute;
     top: 200px; }
 
